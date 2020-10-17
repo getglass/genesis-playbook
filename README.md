@@ -21,9 +21,9 @@ You will need a recent version of Ansible (2.9 or greater) on the genesis host.
 
 `ssh-keygen`
 
-* Copy your key to user "root".
+* Authorize your key to login to your genesis host (which should be localhost).
 
-`ssh-copy-id root@localhost`
+`ssh-copy-id localhost`
 
 * Perform an Ansible run. If your user does not have passwordless sudo, add --ask-become-pass.
 

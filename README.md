@@ -10,6 +10,8 @@ Currently this has only been tested on Ubuntu 18.04, but should work on any Ubun
 
 Currently this repo only supports building and running the "mcm" on the genesis host.
 
+You will need a recent version of Ansible (2.9 or greater) on the genesis host.
+
 ## Getting Started
 * Clone this repository somewhere handy
 

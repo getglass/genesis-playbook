@@ -1,0 +1,14 @@
+---
+# file: site.yml
+
+- hosts: glass-genesis
+  become: yes
+
+  roles:
+  - glass-genesis
+
+- hosts: glass-mcm
+  become: yes
+
+  roles:
+  - glass-mcm

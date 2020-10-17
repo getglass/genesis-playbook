@@ -1,0 +1,10 @@
+---
+# Name: install dependencies on Ubuntu and Debian
+
+- name: Software - Install some basic utilities
+  apt:
+    name:
+      - git
+      - screen
+      - tmux
+    state: present

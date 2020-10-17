@@ -22,7 +22,12 @@ You will need a recent version of Ansible (2.9 or greater) on the genesis host.
 `ssh-keygen`
 
 * Copy your key to user "root".
+
 `ssh-copy-id root@localhost`
+
+* Perform an Ansible run. If your user does not have passwordless sudo, add --ask-become-pass.
+
+`ansible-playbook site.yml -i inventory`
 
 ## Legal notices
 The AWX Project is a trademark of Red Hat, Inc., used with permission.

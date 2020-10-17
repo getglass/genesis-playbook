@@ -1,5 +1,6 @@
 ---
 # Name: install dependencies on Ubuntu and Debian
+# Does not yet work on Debian, sorry
 
 - name: Software - Install some basic utilities
   apt:
@@ -8,3 +9,18 @@
       - screen
       - tmux
     state: present
+
+- name: Software - Install the PPA utilities
+  apt:
+    name: software-properties-common
+    state: present
+
+- name: Sources - Install the official Ansible PPA
+  apt_repository:
+    repo: ppa:ansible/ansible
+    update_cache: yes
+
+- name: Software - Install the latest stable Ansible
+  apt:
+    name: ansible
+    state: latest

@@ -5,6 +5,7 @@
   become: yes
   vars:
     awx_version: 15.0.0
+    docker_compose_version: 1.27.4
 
   roles:
   - glass-genesis

@@ -56,3 +56,18 @@
   apt:
     name: python3-docker
     state: present
+
+- name: Software - Build Essential - Install make and other software needed for compiling
+  apt:
+    name: build-essential
+    state: present
+
+- name: Software - Git - Install Git (already handled by base, but just to be safe)
+  apt:
+    name: git
+    state: present
+
+- name: Software - Python - Install Python3.6+ (already handled above, but just to be safe)
+  apt:
+    name: python3
+    state: present

@@ -3,6 +3,8 @@
 
 - hosts: glass_genesis
   become: yes
+  vars:
+    awx_version: 15.0.0
 
   roles:
   - glass-genesis

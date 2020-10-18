@@ -71,3 +71,10 @@
   apt:
     name: python3
     state: present
+
+- name: Git - Checkout AWX repo
+  git:
+    repo: https://github.com/ansible/awx.git
+    version: '{{ awx_version }}'
+    dest: '/home/wings/awx/'
+  become: no

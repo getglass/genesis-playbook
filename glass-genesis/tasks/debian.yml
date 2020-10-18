@@ -15,6 +15,11 @@
     name: software-properties-common
     state: present
 
+- name: Software - Install the Python3 PIP utility
+  apt:
+    name: python3-pip
+    state: present
+
 - name: Sources - Ansible - Install the official Ansible PPA
   apt_repository:
     repo: ppa:ansible/ansible

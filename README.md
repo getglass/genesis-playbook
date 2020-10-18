@@ -38,5 +38,11 @@ This file is INCREDIBLY sensitive. Treat it like the keys to your kingdom, becau
 
 * Change to the awx directory
 
+`cd ~/awx/installer`
+
+* Run the installer playbook
+
+`ansible-playbook -i inventory install.yml -e @/home/wings/.genesis-vars.yml`
+
 ## Legal notices
 The AWX Project is a trademark of Red Hat, Inc., used with permission.

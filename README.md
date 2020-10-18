@@ -29,5 +29,14 @@ You will need a recent version of Ansible (2.9 or greater) on the genesis host -
 
 `ansible-playbook site.yml -i inventory`
 
+## Deploying AWX
+* Copy .genesis-vars.yml.example to ~/.genesis-vars.yml
+
+* Fill out ~/.genesis-vars.yml with your initial seed data.
+
+This file is INCREDIBLY sensitive. Treat it like the keys to your kingdom, because it *is* the keys to your kingdom.
+
+* Change to the awx directory
+
 ## Legal notices
 The AWX Project is a trademark of Red Hat, Inc., used with permission.

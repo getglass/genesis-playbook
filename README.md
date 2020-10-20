@@ -8,7 +8,7 @@ The "genesis" host is the one that runs this playbook, and the "mcm" host is the
 ## Requirements
 Currently this has only been tested on Ubuntu 18.04, but should work on any Ubuntu LTS or mainline Debian release.
 
-Currently this repo only supports building and running the "mcm" on the genesis host.
+Currently this repo only supports building and running the "mcm" on the genesis host. One potential approach to solve this is not to include localhost in the mcm inventory group, so that the mcm role only runs if there is a custom mcm defined. Then it would simply deploy Docker on the mcm and inject it into the awx inventory file.
 
 You will need a recent version of Ansible (2.9 or greater) on the genesis host - the playbook will upgrade the genesis host to use the latest stable.
 

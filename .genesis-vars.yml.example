@@ -1,0 +1,4 @@
+# Change all of these values
+admin_password: 'adminpass'
+pg_password: 'pgpass'
+secret_key: 'mysupersecret'

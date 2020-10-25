@@ -56,3 +56,5 @@ The AWX Project is a trademark of Red Hat, Inc., used with permission.
 * You must manually add yourself to the Docker user group before attempting to deploy the MCM. Example -
 
 `sudo usermod -aG docker wings`
+
+* On Ubuntu 18.04 the glass-genesis role fails after upgrading Ansible. Re-running the playbook works fine, however.

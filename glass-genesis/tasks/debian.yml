@@ -85,6 +85,13 @@
     group: root
     mode: '0755'
 
+- name: Software - docker-compose - Install (to user) docker-compose python module via pip
+  pip:
+    name: docker-compose
+    extra_args: --user
+    executable: pip3
+  become: no
+
 - name: Git - Checkout AWX repo
   git:
     repo: https://github.com/ansible/awx.git

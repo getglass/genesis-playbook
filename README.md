@@ -35,6 +35,8 @@ cd genesis-playbook
 ## Deploying AWX
 * Copy .genesis-vars.yml.example to ~/.genesis-vars.yml
 
+`cp .genesis-vars.yml.example ~/.genesis-vars.yml`
+
 * Fill out ~/.genesis-vars.yml with your initial seed data.
 
 This file is INCREDIBLY sensitive. Treat it like the keys to your kingdom, because it *is* the keys to your kingdom.

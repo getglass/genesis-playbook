@@ -13,9 +13,12 @@ Currently this repo only supports building and running the "mcm" on the genesis 
 You will need a recent version of Ansible (2.9 or greater) on the genesis host - the playbook will upgrade the genesis host to use the latest stable.
 
 ## Getting Started
-* Clone this repository somewhere handy
+* Clone this repository somewhere handy, and cd into it
 
-`git clone https://github.com/getglass/genesis-playbook.git`
+```
+git clone https://github.com/getglass/genesis-playbook.git
+cd genesis-playbook
+```
 
 * Generate an SSH key if you don't already have one
 

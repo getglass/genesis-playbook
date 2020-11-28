@@ -1,0 +1,56 @@
+---
+# Name: install dependencies on Ubuntu and Debian
+# Does not yet work on Debian, sorry
+- name: Sources - Install the EPEL repository
+  yum:
+    name: epel-release
+    state: present
+
+- name: Sources - Docker - Install the Docker CE repository
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+
+- name: Firewall - firewalld - Enable masquerade
+  firewalld:
+    masquerade: 'yes'
+    state: enabled
+    permanent: yes
+
+- name: Firewall - firewalld - Enable HTTP traffic
+  firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+
+- name: Firewall - firewalld - Enable HTTPS traffic
+  firewalld:
+    service: https
+    permanent: yes
+    state: enabled
+
+- name: Software - Install some basic utilities
+  yum:
+    name:
+      - git
+      - screen
+      - tmux
+    state: present
+
+- name: Software - Install the Python3 PIP utility
+  yum:
+    name: python3-pip
+    state: present
+
+- name: Software - Ansible - Install the latest stable Ansible
+  yum:
+    name: ansible
+    state: latest
+
+- name: Software - Docker - Install Docker CE
+  yum:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present

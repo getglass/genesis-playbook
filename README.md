@@ -6,7 +6,10 @@ It is intended to automatically install all of the dependencies for running an A
 The "genesis" host is the one that runs this playbook, and the "mcm" host is the one that will ultimately run an instance of AWX.
 
 ## Requirements
-Currently this has only been tested on Ubuntu 18.04, but should work on any Ubuntu LTS or mainline Debian release.
+The Genesis host can run any of the following:
+* CentOS 7 (untested) or CentOS 8
+* Ubuntu 18.04 (Ubuntu 20.04 should work too but is currently broken)
+* Debian 10 (untested)
 
 Currently this repo only supports building and running the "mcm" on the genesis host. One potential approach to solve this is not to include localhost in the mcm inventory group, so that the mcm role only runs if there is a custom mcm defined. Then it would simply deploy Docker on the mcm and inject it into the awx inventory file.
 

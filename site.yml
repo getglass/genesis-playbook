@@ -4,8 +4,7 @@
 - hosts: glass_genesis
   become: yes
   vars:
-    awx_version: 15.0.0
-    docker_compose_version: 1.27.4
+    awx_version: 15.0.1
 
   roles:
   - glass-genesis

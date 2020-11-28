@@ -6,4 +6,4 @@
 - name: geerlingguy.pip
 - name: zorlin.awx
   src: https://github.com/Zorlin/ansible-role-awx
-  version: master
+  version: v2.1.0

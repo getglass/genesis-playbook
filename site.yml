@@ -26,4 +26,4 @@
     - geerlingguy.pip
     - geerlingguy.ansible
     - geerlingguy.docker
-    - geerlingguy.awx
+    - zorlin.awx

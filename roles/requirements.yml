@@ -1,7 +1,9 @@
 ---
-- src: geerlingguy.repo-epel
-- src: geerlingguy.git
-- src: geerlingguy.ansible
-- src: geerlingguy.docker
-- src: geerlingguy.pip
-- src: geerlingguy.awx
+- name: geerlingguy.repo-epel
+- name: geerlingguy.git
+- name: geerlingguy.ansible
+- name: geerlingguy.docker
+- name: geerlingguy.pip
+- name: zorlin.awx
+  src: https://github.com/Zorlin/ansible-role-awx
+  version: master

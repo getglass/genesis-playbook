@@ -55,6 +55,9 @@ This file is INCREDIBLY sensitive. Treat it like the keys to your kingdom, becau
 ## Legal notices
 The AWX Project is a trademark of Red Hat, Inc., used with permission.
 
+## Author information
+This playbook uses examples from https://github.com/geerlingguy/ansible-role-awx which were written by Jeff Geerling.
+
 ## Bugs and TODOs
 * You must manually add yourself to the Docker user group before attempting to deploy the MCM. Example -
 

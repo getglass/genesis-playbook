@@ -1,0 +1,4 @@
+---
+# Handlers for awx-firewalld
+- name: reload firewalld
+  systemd: name=firewalld state=reloaded

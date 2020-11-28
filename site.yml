@@ -1,16 +1,29 @@
 ---
-# file: site.yml
+- name: Install AWX
+  hosts: glass_genesis
+  become: true
 
-- hosts: glass_genesis
-  become: yes
   vars:
     awx_version: 15.0.1
+    ansible_install_method: "pip"
+    docker_install_compose: false
+    pip_install_packages:
+      - name: docker
+      - name: docker-compose
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
 
   roles:
-  - glass-genesis
-
-- hosts: glass_mcm
-  become: yes
-
-  roles:
-  - glass-mcm
+    - role: awx-firewalld
+      when: ansible_os_family == 'RedHat'
+    - role: geerlingguy.repo-epel
+      when: ansible_os_family == 'RedHat'
+    - geerlingguy.git
+    - geerlingguy.pip
+    - geerlingguy.ansible
+    - geerlingguy.docker
+    - geerlingguy.awx

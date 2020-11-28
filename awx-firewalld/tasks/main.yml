@@ -1,0 +1,25 @@
+---
+# Set up necessary firewall rule changes for Docker and AWX
+- name: Firewall - firewalld - Enable masquerade
+  firewalld:
+    masquerade: 'yes'
+    state: enabled
+    permanent: yes
+  notify: reload firewalld
+
+- name: Firewall - firewalld - Enable HTTP traffic
+  firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+  notify: reload firewalld
+
+- name: Firewall - firewalld - Enable HTTPS traffic
+  firewalld:
+    service: https
+    permanent: yes
+    state: enabled
+  notify: reload firewalld
+
+- name: Meta - force handlers to run so we can reload firewalld early
+  meta: flush_handlers

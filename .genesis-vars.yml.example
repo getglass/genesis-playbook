@@ -1,4 +1,5 @@
-# Change all of these values
-admin_password: 'adminpass'
-pg_password: 'pgpass'
-secret_key: 'mysupersecret'
+---
+# These are your secrets. Change them from the defaults and keep them safe.
+awx_admin_password: 'password'
+awx_pg_password: 'awxpass'
+awx_secret_key: 'awxsecret'

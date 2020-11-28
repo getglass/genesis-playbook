@@ -1,19 +1,14 @@
 # genesis-playbook
 This repository forms the beginning of an experimental system - GetGlass.io.
 
-It is intended to automatically install all of the dependencies for running an Ansible AWX installation, and assist in creating an instance.
+It is meant to automatically install and configure Ansible AWX on a "genesis" host.
 
-The "genesis" host is the one that runs this playbook, and the "mcm" host is the one that will ultimately run an instance of AWX.
+In the future an "mcm" role will be added so the Genesis host can be used to securely bootstrap AWX on the MCM instead.
 
 ## Requirements
-The Genesis host can run any of the following:
-* CentOS 7 (untested) or CentOS 8
-* Ubuntu 18.04 (Ubuntu 20.04 should work too but is currently broken)
-* Debian 10 (untested)
+Should work on Ubuntu 18.04, Ubuntu 20.04, CentOS 7, and CentOS 8. Currently only tested on CentOS 8.
 
-Currently this repo only supports building and running the "mcm" on the genesis host. One potential approach to solve this is not to include localhost in the mcm inventory group, so that the mcm role only runs if there is a custom mcm defined. Then it would simply deploy Docker on the mcm and inject it into the awx inventory file.
-
-You will need a recent version of Ansible (2.9 or greater) on the genesis host - the playbook will upgrade the genesis host to use the latest stable.
+You will need Git and Ansible installed.
 
 ## Getting Started
 * Clone this repository somewhere handy, and cd into it
@@ -21,6 +16,13 @@ You will need a recent version of Ansible (2.9 or greater) on the genesis host -
 ```
 git clone https://github.com/getglass/genesis-playbook.git
 cd genesis-playbook
+```
+
+* Copy the Genesis variables into place, using the example file. Change them as appropriate.
+
+```
+cp .genesis-vars.yml.example ~/.genesis_vars.yml
+nano ~/.genesis_vars.yml
 ```
 
 * Generate an SSH key if you don't already have one
@@ -33,34 +35,13 @@ cd genesis-playbook
 
 * Perform an Ansible run. If your user does not have passwordless sudo, add --ask-become-pass.
 
-`ansible-playbook site.yml -i inventory`
-
-## Deploying AWX
-* Copy .genesis-vars.yml.example to ~/.genesis-vars.yml
-
-`cp .genesis-vars.yml.example ~/.genesis-vars.yml`
-
-* Fill out ~/.genesis-vars.yml with your initial seed data.
-
-This file is INCREDIBLY sensitive. Treat it like the keys to your kingdom, because it *is* the keys to your kingdom.
-
-* Change to the awx directory
-
-`cd ~/awx/installer`
-
-* Run the installer playbook
-
-`ansible-playbook -i inventory install.yml -e @$HOME/.genesis-vars.yml`
+`ansible-playbook site.yml`
 
 ## Legal notices
 The AWX Project is a trademark of Red Hat, Inc., used with permission.
 
 ## Author information
-This playbook uses examples from https://github.com/geerlingguy/ansible-role-awx which were written by Jeff Geerling.
+This playbook uses examples and code from https://github.com/geerlingguy/ansible-role-awx which was written by Jeff Geerling.
 
 ## Bugs and TODOs
-* You must manually add yourself to the Docker user group before attempting to deploy the MCM. Example -
-
-`sudo usermod -aG docker wings`
-
-* On Ubuntu 18.04 the glass-genesis role fails after upgrading Ansible. Re-running the playbook works fine, however.
+* Needs more testing.

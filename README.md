@@ -6,7 +6,7 @@ It is meant to automatically install and configure Ansible AWX on a "genesis" ho
 In the future an "mcm" role will be added so the Genesis host can be used to securely bootstrap AWX on the MCM instead.
 
 ## Requirements
-Should work on Ubuntu 18.04, Ubuntu 20.04, CentOS 7, and CentOS 8. Currently only tested on CentOS 8.
+Works on Ubuntu 18.04, Ubuntu 20.04, CentOS 7, and CentOS 8.
 
 You will need Git and Ansible installed.
 
